@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Ink.Runtime;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class OpeningSceneStoryBoard : MonoBehaviour{
 
@@ -13,6 +14,7 @@ public class OpeningSceneStoryBoard : MonoBehaviour{
 
     public TMP_Text dialogueBox;
     public TMP_Text nameBox;
+
 
 
     // Start is called before the first frame update
@@ -31,6 +33,7 @@ public class OpeningSceneStoryBoard : MonoBehaviour{
         story = new Story(inkJSONAsset.text);
         story.BindExternalFunction("setName", (string name) => setName(name));
         story.BindExternalFunction("setComponentFade", (string componentName, bool fade) => setComponentFade(componentName, fade));
+        story.BindExternalFunction("sceneChange", (string sceneName) => sceneChange(sceneName));
         displayNextLine();
     } 
 
@@ -54,9 +57,14 @@ public class OpeningSceneStoryBoard : MonoBehaviour{
            text = text?.Trim();
            dialogueBox.text = text;
         } else {
-            dialogueBox.text = "all done";
+
         }
 
+    }
+
+    //Effects: Swaps this scene with the scene of the given name;
+    public void sceneChange(string sceneName) {
+    	SceneManager.LoadScene(sceneName);
     }
 
     //Modifies: this

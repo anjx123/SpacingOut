@@ -1,5 +1,6 @@
 EXTERNAL setName(name)
 EXTERNAL setComponentFade(componentName, fade)
+EXTERNAL sceneChange(sceneName)
 
 {setComponentFade("FadeScreen", true)}
 {setComponentFade("TextBox", true)}
@@ -87,6 +88,7 @@ Houston, the Eagle has landed.
 
 {setComponentFade("TextBox", false)}
 {setComponentFade("FadeScreen", true)}
+{sceneChange("Main Menu")}
 
 //Transition to next scene
 //Implement sound hooks

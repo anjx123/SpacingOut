@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Ink.Runtime;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class OpeningSceneStoryBoard : MonoBehaviour{
 
@@ -13,6 +14,7 @@ public class OpeningSceneStoryBoard : MonoBehaviour{
 
     public TMP_Text dialogueBox;
     public TMP_Text nameBox;
+
 
 
     // Start is called before the first frame update
@@ -31,11 +33,12 @@ public class OpeningSceneStoryBoard : MonoBehaviour{
         story = new Story(inkJSONAsset.text);
         story.BindExternalFunction("setName", (string name) => setName(name));
         story.BindExternalFunction("setComponentFade", (string componentName, bool fade) => setComponentFade(componentName, fade));
+        story.BindExternalFunction("sceneChange", (string sceneName) => sceneChange(sceneName));
         displayNextLine();
     } 
 
 
-    // Update is called once per frame
+    // Update is called once per frame, waits for space or mouse press to continue dialogue
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space)) {
@@ -54,9 +57,14 @@ public class OpeningSceneStoryBoard : MonoBehaviour{
            text = text?.Trim();
            dialogueBox.text = text;
         } else {
-            dialogueBox.text = "all done";
+
         }
 
+    }
+
+    //Effects: Swaps this scene with the scene of the given name;
+    public void sceneChange(string sceneName) {
+    	SceneManager.LoadScene(sceneName);
     }
 
     //Modifies: this
@@ -66,7 +74,7 @@ public class OpeningSceneStoryBoard : MonoBehaviour{
         nameBox.text = speakerName;
     }
 
-    //Effects: Changes the component to fade in or out
+    //Effects: Changes the given component to fade in or out
     public void setComponentFade(string componentName, bool fade) {
         GameObject uiObject = GameObject.Find(componentName);
        

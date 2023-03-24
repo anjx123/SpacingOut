@@ -41,6 +41,9 @@ public class OpeningSceneStoryBoard : MonoBehaviour{
         if(Input.GetKeyDown(KeyCode.Space)) {
             displayNextLine();
         } 
+        if(Input.GetMouseButtonUp(0)) {
+            displayNextLine();
+        }
     }
 
     //Effects: Displays the next line in the inky file if it exists

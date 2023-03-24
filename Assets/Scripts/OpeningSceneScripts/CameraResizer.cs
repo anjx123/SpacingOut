@@ -8,6 +8,7 @@ public class CameraResizer : MonoBehaviour
 
     private Camera cam;
 
+    //Effect: Upon awakening, sets the camera to the provided aspect ratio
     void Awake()
     {
         cam = GetComponent<Camera>();

@@ -35,7 +35,7 @@ public class OpeningSceneStoryBoard : MonoBehaviour{
     } 
 
 
-    // Update is called once per frame
+    // Update is called once per frame, waits for space or mouse press to continue dialogue
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space)) {
@@ -66,7 +66,7 @@ public class OpeningSceneStoryBoard : MonoBehaviour{
         nameBox.text = speakerName;
     }
 
-    //Effects: Changes the component to fade in or out
+    //Effects: Changes the given component to fade in or out
     public void setComponentFade(string componentName, bool fade) {
         GameObject uiObject = GameObject.Find(componentName);
        

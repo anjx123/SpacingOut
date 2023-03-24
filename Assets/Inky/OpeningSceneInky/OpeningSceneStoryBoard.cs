@@ -15,6 +15,9 @@ public class OpeningSceneStoryBoard : MonoBehaviour{
     public TMP_Text dialogueBox;
     public TMP_Text nameBox;
 
+    
+    private const float SCENE_CHANGE_TIME = 3.0f;
+
 
 
     // Start is called before the first frame update
@@ -56,17 +59,22 @@ public class OpeningSceneStoryBoard : MonoBehaviour{
            string text = story.Continue();
            text = text?.Trim();
            dialogueBox.text = text;
-        } else {
-
-        }
-
+        } 
     }
 
     //Effects: Swaps this scene with the scene of the given name;
     public void sceneChange(string sceneName) {
-    	SceneManager.LoadScene(sceneName);
+        StartCoroutine(waitForSceneToChange(sceneName));
+    	
+
     }
 
+    //Effects: Waits for a set amount of time before changing scenes
+    IEnumerator waitForSceneToChange(string sceneName) {
+        yield return new WaitForSeconds(SCENE_CHANGE_TIME);
+        SceneManager.LoadScene(sceneName);
+    }
+    
     //Modifies: this
     //Effects: Changes the name to this from inky
     public void setName(string name) {

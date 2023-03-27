@@ -59,4 +59,12 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("End of Conversation");
         clearPanel();
     }
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
+        {
+            EndDialogue();
+        }
+    }
 }

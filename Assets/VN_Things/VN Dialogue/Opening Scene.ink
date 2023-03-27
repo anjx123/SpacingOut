@@ -161,7 +161,7 @@ To paraphrase the great Neil Armstrong,
 "Although that’s one small step for now, that’ll be one giant leap forever"
  
 {setComponentFade("FadeScreen", true)}
-{sceneChange("Menu")}
+{sceneChange("Main Menu")}
 
 -> END
 

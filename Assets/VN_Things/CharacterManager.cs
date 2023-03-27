@@ -14,10 +14,10 @@ public class CharacterManager : MonoBehaviour
     private GameObject characterPrefab;
 
     [SerializeField]
-    private CharacterMoods lilacMoods;
+    private CharacterMoods violetMoods;
 
     [SerializeField]
-    private CharacterMoods mercuryMoods;
+    private CharacterMoods lilacMoods;
 
     // Start is called before the first frame update
     void Start()
@@ -202,12 +202,12 @@ public class CharacterManager : MonoBehaviour
     {
         switch (name)
         {
+            case CharacterName.Violet:
+                return violetMoods;
             case CharacterName.Lilac:
-            return lilacMoods;
-            case CharacterName.Mercury:
-            return mercuryMoods;
+                return lilacMoods;
             default:
-            Debug.LogError($"Could not find moodset for {name}");
+                Debug.LogError($"Could not find moodset for {name}");
             return null;
         }
     }

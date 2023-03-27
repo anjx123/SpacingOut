@@ -3,7 +3,10 @@ guid: 50d4ff4b759201f4b908f43f27f1db0a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - characterPrefab: {fileID: 3546373325292806443, guid: 16eb2364af4e1f34b83c76ae14980d4c, type: 3}
+  - lilacMoods: {instanceID: 0}
+  - violetMoods: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

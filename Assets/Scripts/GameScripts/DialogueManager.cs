@@ -5,6 +5,8 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    public GameObject dialoguePanel;
+
     public TextMeshProUGUI dialogueText;
 
     public TextMeshProUGUI nameText;
@@ -14,10 +16,13 @@ public class DialogueManager : MonoBehaviour
     void Start ()
     {
         sentences = new Queue<string>();
+        clearPanel();
     }
 
     public void StartDialogue (Dialogue dialogue)
     {
+        dialoguePanel.SetActive(true);
+
         nameText.text = dialogue.name;
 
         sentences.Clear();
@@ -28,6 +33,13 @@ public class DialogueManager : MonoBehaviour
         }
 
         DisplayNextSentence();
+    }
+
+    public void clearPanel()
+    {
+        dialoguePanel.SetActive(false);
+        nameText.text = "";
+        sentences.Clear();
     }
 
     public void DisplayNextSentence()
@@ -45,5 +57,6 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         Debug.Log("End of Conversation");
+        clearPanel();
     }
 }

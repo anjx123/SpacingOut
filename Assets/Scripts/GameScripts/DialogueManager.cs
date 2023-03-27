@@ -21,6 +21,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
     {
+        Time.timeScale = 0;
+
         dialoguePanel.SetActive(true);
 
         nameText.text = dialogue.name;
@@ -65,6 +67,7 @@ public class DialogueManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
         {
             EndDialogue();
+            Time.timeScale = 1;
         }
     }
 }

@@ -11,6 +11,8 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject noButton;
 
+    public SceneTransition sceneLoader;
+
     public TextMeshProUGUI dialogueText;
 
     public TextMeshProUGUI nameText;
@@ -18,6 +20,8 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
 
     private int totalSentenceCount;
+
+    private bool inDialogue = false;
 
     void Start ()
     {
@@ -44,6 +48,8 @@ public class DialogueManager : MonoBehaviour
 
         totalSentenceCount = dialogue.sentences.Length;
 
+        inDialogue = true;
+
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
@@ -58,6 +64,7 @@ public class DialogueManager : MonoBehaviour
         nameText.text = "";
         sentences.Clear();
         Time.timeScale = 1;
+        inDialogue = false;
     }
 
     public void DisplayNextSentence()
@@ -86,6 +93,10 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        if (1 == 1)
+        {
+            sceneLoader.LoadNextScene();
+        }
         clearPanel();
     }
 
@@ -93,7 +104,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Space))
         {
-            if (sentences != null)
+            if (inDialogue)
             {
                 if (sentences.Count == 0 || sentences.Count == 5)
                 {

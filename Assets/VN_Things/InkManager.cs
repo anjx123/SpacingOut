@@ -19,6 +19,8 @@ public class InkManager : MonoBehaviour
     private TextMeshProUGUI textComponent;
     public TMP_Text nameBox;
 
+    public SceneTransition sceneLoader;
+
     private const float SCENE_CHANGE_TIME = 3.0f;
 
     // Start is called before the first frame update
@@ -52,6 +54,8 @@ public class InkManager : MonoBehaviour
 
         story.BindExternalFunction("ChangeMood", (string name, string mood) 
             => characterManager.ChangeMood(name, mood));
+
+        story.BindExternalFunction("sceneLoader", () => sceneLoader.LoadNextScene());
 
         DisplayNextLine();
 

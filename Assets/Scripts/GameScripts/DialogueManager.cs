@@ -25,7 +25,7 @@ public class DialogueManager : MonoBehaviour
         clearPanel();
     }
 
-    public void StartDialogue (Dialogue dialogue)
+    public void StartDialogue (RPGDialogue dialogue)
     {
         if (dialoguePanel.activeInHierarchy)
         {

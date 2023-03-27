@@ -13,6 +13,8 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
 
+    private int totalSentenceCount;
+
     void Start ()
     {
         sentences = new Queue<string>();
@@ -29,6 +31,8 @@ public class DialogueManager : MonoBehaviour
 
         sentences.Clear();
 
+        totalSentenceCount = dialogue.sentences.Length;
+
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
@@ -42,6 +46,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         nameText.text = "";
         sentences.Clear();
+        Time.timeScale = 1;
     }
 
     public void DisplayNextSentence()
@@ -58,16 +63,19 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        Debug.Log("End of Conversation");
         clearPanel();
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Space))
         {
             EndDialogue();
-            Time.timeScale = 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            DisplayNextSentence();
         }
     }
 }

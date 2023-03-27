@@ -12,7 +12,7 @@ public class InteractableObject : CollidableObject
     {
         if (collidedObject.tag == "Player")
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 OnInteract();
             }

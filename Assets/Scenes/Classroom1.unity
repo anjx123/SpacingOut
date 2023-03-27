@@ -1583,6 +1583,9 @@ MonoBehaviour:
     - "Hm\u2026 This seat is nice and accessible. But, the two girls here are chatting
       with their friends from the row behind\u2026 I would be really out of place
       if I sat there. Let\u2019s not invade a pre-existing friend group."
+    - Are you sure?
+    - Are you really sure?
+    - Really?
 --- !u!114 &415339036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3797,6 +3800,9 @@ MonoBehaviour:
     - "It\u2019s a bit too far back for my liking\u2026 While it is nice and secluded
       back here, I think it might not be the best option to remain focused and diligent.
       Besides, I sometimes need to squint to look at the board. Not for me, I guess\u2026"
+    - Are you sure?
+    - Are you really sure?
+    - Really?
 --- !u!114 &910121289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4884,6 +4890,9 @@ MonoBehaviour:
     - "That backpack\u2026 he\u2019s probably reserving the seat for someone\u2026?
       He might find me annoying if I ask him to move his backpack so I can sit here
       when there are other seats available\u2026 Let\u2019s not\u2026"
+    - Are you sure?
+    - Are you really sure?
+    - Really?
 --- !u!114 &1163233764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6499,6 +6508,9 @@ MonoBehaviour:
       a bit closer to an aisle. I don\u2019t like having to squeeze through people
       when trying to get to and out of my seat\u2026 It seems like a hassle to sit
       here."
+    - Are you sure?
+    - Are you really sure?
+    - Really?
 --- !u!114 &1399069537
 MonoBehaviour:
   m_ObjectHideFlags: 0

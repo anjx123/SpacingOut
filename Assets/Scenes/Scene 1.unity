@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &72001182 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6605043496029743441, guid: 1670082cef0a1b04dbba8ba65a60cae8, type: 3}
+  m_PrefabInstance: {fileID: 843068618}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17babe269aff7984194a04be2e17388e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &100618694
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,6 +853,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneAnimator: {fileID: 257767829}
+--- !u!1001 &843068618
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6605043496029743440, guid: 1670082cef0a1b04dbba8ba65a60cae8, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605043496029743440, guid: 1670082cef0a1b04dbba8ba65a60cae8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605043496029743440, guid: 1670082cef0a1b04dbba8ba65a60cae8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605043496029743440, guid: 1670082cef0a1b04dbba8ba65a60cae8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605043496029743440, guid: 1670082cef0a1b04dbba8ba65a60cae8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605043496029743440, guid: 1670082cef0a1b04dbba8ba65a60cae8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605043496029743440, guid: 1670082cef0a1b04dbba8ba65a60cae8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605043496029743440, guid: 1670082cef0a1b04dbba8ba65a60cae8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605043496029743440, guid: 1670082cef0a1b04dbba8ba65a60cae8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605043496029743440, guid: 1670082cef0a1b04dbba8ba65a60cae8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605043496029743440, guid: 1670082cef0a1b04dbba8ba65a60cae8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605043496029743446, guid: 1670082cef0a1b04dbba8ba65a60cae8, type: 3}
+      propertyPath: m_Name
+      value: SceneLoader
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1670082cef0a1b04dbba8ba65a60cae8, type: 3}
 --- !u!1 &1451771796
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,6 +942,7 @@ MonoBehaviour:
   inkJsonAsset: {fileID: 4900000, guid: b32bba3eeed31b845ace34812f28f88e, type: 3}
   textComponent: {fileID: 596105587}
   nameBox: {fileID: 2014722374}
+  sceneLoader: {fileID: 72001182}
 --- !u!4 &1451771798
 Transform:
   m_ObjectHideFlags: 0
@@ -941,8 +1010,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterPrefab: {fileID: 3546373325292806443, guid: 16eb2364af4e1f34b83c76ae14980d4c, type: 3}
+  violetMoods: {fileID: 0}
   lilacMoods: {fileID: 1504192213}
-  mercuryMoods: {fileID: 1504192212}
 --- !u!114 &1504192212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -957,8 +1026,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 1
   Happy: {fileID: 21300000, guid: 563277edd2763204584f99e494b079d7, type: 3}
+  Beaming: {fileID: 0}
   Serious: {fileID: 21300000, guid: 94cdee16fe66fa24caed2c795c2a1a07, type: 3}
   Shocked: {fileID: 21300000, guid: f9033d00b6b28754899d6533baa5ee29, type: 3}
+  Concentrated: {fileID: 0}
+  Nonchalant: {fileID: 0}
+  NonchalantSide: {fileID: 0}
+  NonchalantUp: {fileID: 0}
+  Silhouette: {fileID: 0}
 --- !u!114 &1504192213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -973,8 +1048,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 0
   Happy: {fileID: 21300000, guid: 8333974e34f3e5640ba41a4713175ae9, type: 3}
+  Beaming: {fileID: 0}
   Serious: {fileID: 21300000, guid: de44e9cde01d4a748adc56a5558290af, type: 3}
   Shocked: {fileID: 21300000, guid: 22607c56fa3b7684fa418314a809a87d, type: 3}
+  Concentrated: {fileID: 0}
+  Nonchalant: {fileID: 0}
+  NonchalantSide: {fileID: 0}
+  NonchalantUp: {fileID: 0}
+  Silhouette: {fileID: 0}
 --- !u!1 &1877162808
 GameObject:
   m_ObjectHideFlags: 0

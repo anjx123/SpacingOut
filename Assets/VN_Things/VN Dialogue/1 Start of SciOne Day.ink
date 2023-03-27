@@ -14,6 +14,8 @@ EXTERNAL FadeInCharacter(characterName, position, mood)
 
 EXTERNAL FadeOutCharacter(characterName)
 
+EXTERNAL sceneLoader()
+
 {setComponentFade("FadeScreen", true)}
 {setComponentFade("Door BG", false)}
 {setComponentFade("Dialogue Box", true)}
@@ -140,8 +142,7 @@ Huff… huff…
 
 {setComponentFade("FadeScreen", true)}
 
-{sceneChange("Gameplay")}
-
+{sceneLoader()}
 
 -> END
 

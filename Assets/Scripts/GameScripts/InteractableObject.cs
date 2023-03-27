@@ -23,9 +23,7 @@ public class InteractableObject : CollidableObject
     {
         if (!z_Interacted)
         {
-            z_Interacted = true;
             dialogueTrigger.TriggerDialogue();
-            z_Interacted = false;
         }
     }
 }

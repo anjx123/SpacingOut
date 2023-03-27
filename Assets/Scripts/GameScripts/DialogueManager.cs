@@ -63,10 +63,16 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (sentences.Count < 5)
+        if (sentences.Count < 6)
         {
             yesbutton.SetActive(true);
             noButton.SetActive(true);
+        }
+
+        if (sentences.Count == 1)
+        {
+            yesbutton.SetActive(false);
+            noButton.SetActive(false);
         }
 
         string sentence = sentences.Dequeue();
@@ -82,9 +88,12 @@ public class DialogueManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Space))
         {
-            if (sentences != null && sentences.Count == 4)
+            if (sentences != null)
             {
-                DisplayNextSentence();
+                if (sentences.Count == 0 || sentences.Count == 5)
+                {
+                    DisplayNextSentence();
+                }
             }
         }
     }

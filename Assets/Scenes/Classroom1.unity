@@ -1722,6 +1722,7 @@ MonoBehaviour:
     - Are you sure?
     - Are you really sure?
     - Really?
+    - You've selected this seat.
 --- !u!114 &415339036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3942,6 +3943,7 @@ MonoBehaviour:
     - Are you sure?
     - Are you really sure?
     - Really?
+    - "There may be better options\u2026 Let\u2019s keep thinking\u2026"
 --- !u!114 &910121289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5242,6 +5244,7 @@ MonoBehaviour:
     - Are you sure?
     - Are you really sure?
     - Really?
+    - "There may be better options\u2026 Let\u2019s keep thinking\u2026"
 --- !u!114 &1163233764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6861,6 +6864,7 @@ MonoBehaviour:
     - Are you sure?
     - Are you really sure?
     - Really?
+    - "There may be better options\u2026 Let\u2019s keep thinking\u2026"
 --- !u!114 &1399069537
 MonoBehaviour:
   m_ObjectHideFlags: 0

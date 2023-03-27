@@ -6,21 +6,24 @@ public class InteractableObject : CollidableObject
 {
     private bool z_Interacted = false;
 
+    public DialogueTrigger dialogueTrigger;
+
     protected override void OnCollided(GameObject collidedObject)
     {
-        if (Input.GetKey(KeyCode.E))
+        if (collidedObject.tag == "Player")
         {
-            OnInteract();
+            if (Input.GetKey(KeyCode.E))
+            {
+                OnInteract();
+            }
         }
     }
 
-    private void OnInteract()
+    protected virtual void OnInteract()
     {
         if (!z_Interacted)
         {
-            z_Interacted = true;
-            Debug.Log("INTERACT WITH " + name);
+            dialogueTrigger.TriggerDialogue();
         }
-        Debug.Log("Interact with Object");
     }
 }

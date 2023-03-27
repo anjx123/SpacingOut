@@ -3,12 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - NPC
+  - TextBox
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - npcs
   - Water
   - UI
   - 
@@ -40,6 +42,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 867074583
+    locked: 0
+  - name: Tables
+    uniqueID: 2979168469
     locked: 0
   - name: Default
     uniqueID: 0

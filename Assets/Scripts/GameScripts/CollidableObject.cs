@@ -20,7 +20,7 @@ public class CollidableObject : MonoBehaviour
         z_Collider.OverlapCollider(z_Filter, z_CollidedObjects);
         foreach(var o in z_CollidedObjects)
         {
-            Debug.Log("Collided with " + o.name);
+            OnCollided(o.gameObject);
         }
     }
 

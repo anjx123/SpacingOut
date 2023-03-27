@@ -7,6 +7,10 @@ public class DialogueManager : MonoBehaviour
 {
     public GameObject dialoguePanel;
 
+    public GameObject yesbutton;
+
+    public GameObject noButton;
+
     public TextMeshProUGUI dialogueText;
 
     public TextMeshProUGUI nameText;
@@ -26,6 +30,8 @@ public class DialogueManager : MonoBehaviour
         Time.timeScale = 0;
 
         dialoguePanel.SetActive(true);
+        yesbutton.SetActive(false);
+        noButton.SetActive(false);
 
         nameText.text = dialogue.name;
 
@@ -57,6 +63,12 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        if (sentences.Count < 5)
+        {
+            yesbutton.SetActive(true);
+            noButton.SetActive(true);
+        }
+
         string sentence = sentences.Dequeue();
         dialogueText.text = sentence;
     }
@@ -68,14 +80,12 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Space))
         {
-            EndDialogue();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            DisplayNextSentence();
+            if (sentences != null && sentences.Count == 4)
+            {
+                DisplayNextSentence();
+            }
         }
     }
 }

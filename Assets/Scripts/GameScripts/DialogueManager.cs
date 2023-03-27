@@ -27,6 +27,11 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
     {
+        if (dialoguePanel.activeInHierarchy)
+        {
+            return;
+        }
+
         Time.timeScale = 0;
 
         dialoguePanel.SetActive(true);

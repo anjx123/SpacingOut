@@ -4,35 +4,46 @@ using UnityEngine;
 
 public class AudioScript : MonoBehaviour
 {
-    public AudioSource audioSource;
+    
+    private static int POOL_SIZE = 3;
+
+    public AudioSource selectedSource;
+    public AudioSource[] audioTracks; // Array of all audioSources available to be played simultaneously
+    private Dictionary<string, AudioSource> activeTracks; // Maps active tracks to the sound name they are playing;
+
 
     public AudioClip[] audioClips; // Array of all audio clips in the project you want to preload
-
     private Dictionary<string, AudioClip> audioClipDict; // Dictionary mapping audio clip names to audio clip objects
 
-    public float fadeInTime = 0.01f; //Might want to add to the inky function a fade time, but this constant is here if you need it. 
+    public float fadeInTime = 0.1f; //Might want to add to the inky function a fade time, but this constant is here if you need it. 
     public float fadeOutTime = 1.0f;
 
     private bool isFadingIn = false;
     private bool isFadingOut = false; 
     private float fadeTimer = 0.0f; //A timer that keeps track of how long the fade has been going on.
-    private float initialVolume = 0f; 
+    private float initialVolume = 0.1f; 
     private float finalVolume = 0.4f;
 
     // Start is called before the first frame update
     void Start()
-    {
-        
+    {       
         // Load all audio clips and store them in the audioClipDict dictionary
         // This dictionary only loads AudioClips, if you want to load extra information like a specific volume to play the song at
         // create a new class and swap in that class for Audio Clip.
         audioClipDict = new Dictionary<string, AudioClip>();
-        
-
         foreach (AudioClip clip in audioClips)
         {
             audioClipDict.Add(clip.name, clip);
         }
+
+        audioTracks = new AudioSource[POOL_SIZE];
+        for (int i = 0; i < audioTracks.Length; i++)
+        {
+            audioTracks[i] = gameObject.AddComponent<AudioSource>();
+            audioTracks[i].playOnAwake = false;
+        }
+
+        activeTracks = new Dictionary<string, AudioSource>();
     }
 
     // Update is called once per frame and watches to see whether the audio is fading in or out
@@ -41,7 +52,7 @@ public class AudioScript : MonoBehaviour
         if (isFadingIn)
         {
             fadeTimer += Time.deltaTime;
-            audioSource.volume = Mathf.Lerp(initialVolume, finalVolume, fadeTimer / fadeInTime);
+            selectedSource.volume = Mathf.Lerp(initialVolume, finalVolume, fadeTimer / fadeInTime);
             if (fadeTimer >= fadeInTime)
             {
                 isFadingIn = false;
@@ -49,46 +60,69 @@ public class AudioScript : MonoBehaviour
         }
         else if (isFadingOut)
         {
+            
+            selectedSource.loop = false;
             fadeTimer += Time.deltaTime;
-            audioSource.volume = Mathf.Lerp(finalVolume, initialVolume, fadeTimer / fadeOutTime);
+            selectedSource.volume = Mathf.Lerp(finalVolume, initialVolume, fadeTimer / fadeOutTime);
             if (fadeTimer >= fadeOutTime)
             {
                 isFadingOut = false;
-                audioSource.Stop();
+                selectedSource.Stop();
             }
         }
     }
 
     //Requires: Song provided needs to be loaded in, please run the stop command first this will play clips concurrently. 
     // Finds the song that has been loaded in and plays it
-    public void Play(string songName)
+    public void Play(string soundName)
     {
-    
-        if (audioClipDict.ContainsKey(songName))
+    if (audioClipDict.ContainsKey(soundName))
+    {
+        for (int i = 0; i < audioTracks.Length; i++)
         {
-            audioSource.clip = audioClipDict[songName];
+            if (!audioTracks[i].isPlaying)
+            {   
+
+                audioTracks[i].clip = audioClipDict[soundName];
+                activeTracks.Add(soundName, audioTracks[i]); // Associates an active track with the effect it is playing
+
+                audioTracks[i].volume = 0.1f;
+                initialVolume = audioTracks[i].volume;
+                isFadingIn = true;
+                selectedSource  = audioTracks[i];
+                selectedSource.Play();
+                break;
+            }
         }
-        else
-        {
-            Debug.LogWarning("Audio clip not found: " + songName);
-        }
-        audioSource.volume = 0.1f;
-        initialVolume = audioSource.volume;
-        isFadingIn = true;
-        audioSource.Play();
+    } else
+    {
+         Debug.LogWarning("Audio clip not found: " + soundName);
+    }
     }
 
     //Effect: Stops a given song from playing 
-    public void Stop(string songName)
-    {
-        isFadingOut = true;
+    public void Stop(string soundName)
+    {   
+        if (activeTracks.ContainsKey(soundName)) {
+        selectedSource = activeTracks[soundName];
         fadeTimer = 0.0f;
-        initialVolume = audioSource.volume;
+        finalVolume = selectedSource.volume;
+        isFadingOut = true;
+        activeTracks.Remove(soundName);
+        } else {
+        Debug.LogWarning(soundName + " is not actively being played");
+        }
+        
     }
 
     //effects: Sets the song to loop, if you only want specific songs to loop, I recommend you create a new class to store that info.
-    public void Loop(bool isLoop)
+    public void Loop(string soundName, bool isLoop)
     {
-        audioSource.loop = isLoop;
+        if (activeTracks.ContainsKey(soundName)) {
+        selectedSource = activeTracks[soundName];
+        selectedSource.loop = isLoop;
+        } else {
+        Debug.LogWarning(soundName + " is not actively being played");
+        }
     }
 }

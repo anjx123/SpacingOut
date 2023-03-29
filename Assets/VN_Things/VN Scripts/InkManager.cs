@@ -63,7 +63,7 @@ public class InkManager : MonoBehaviour
 
         story.BindExternalFunction("stopSound", (string soundName) => audioManager.Stop(soundName));
 
-        story.BindExternalFunction("setLoop", (bool isLoop) => audioManager.Loop(isLoop));
+        story.BindExternalFunction("setLoop", (string soundName, bool isLoop) => audioManager.Loop(soundName, isLoop));
 
         DisplayNextLine();
 

@@ -16,7 +16,9 @@ EXTERNAL FadeOutCharacter(characterName)
 
 EXTERNAL playSound(soundName)
 
-EXTERNAL setLoop(isLoop)
+EXTERNAL setLoop(soundName, isLoop)
+
+EXTERNAL stopSound(soundName)
 
 {setComponentFade("FadeScreen", false)}
 {setComponentFade("Dialogue Box", true)}
@@ -90,7 +92,7 @@ Cuz if not…
 {ChangeMood("Lilac", "Beaming")}
 {ChangeMood("Violet", "Nonchalant")}
 {playSound("Actual Waffles")}
-{setLoop(true)}
+{setLoop("Actual Waffles", true)}
 Wanna join our group?
 
 {setName("Mercury")}
@@ -191,6 +193,9 @@ Yeah, duh? Who wouldn’t think that’s cool, having an astronaut as a parent. 
 …
 
 Ah, sorry. I got a bit too excited.
+
+
+{stopSound("Actual Waffles")}
 
 {setName("Lilac")}
 {ChangeMood("Lilac", "Beaming")}

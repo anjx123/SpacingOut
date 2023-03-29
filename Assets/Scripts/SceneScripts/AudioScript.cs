@@ -10,13 +10,14 @@ public class AudioScript : MonoBehaviour
 
     private Dictionary<string, AudioClip> audioClipDict; // Dictionary mapping audio clip names to audio clip objects
 
-    public float fadeInTime = 0.0f; //Might want to add to the inky function a fade time, but this constant is here if you need it. 
+    public float fadeInTime = 0.01f; //Might want to add to the inky function a fade time, but this constant is here if you need it. 
     public float fadeOutTime = 1.0f;
 
     private bool isFadingIn = false;
     private bool isFadingOut = false; 
     private float fadeTimer = 0.0f; //A timer that keeps track of how long the fade has been going on.
-    private float initialVolume = 0.0f; //The volume level of the audio before the fade started.
+    private float initialVolume = 0f; 
+    private float finalVolume = 0.4f;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +41,7 @@ public class AudioScript : MonoBehaviour
         if (isFadingIn)
         {
             fadeTimer += Time.deltaTime;
-            audioSource.volume = Mathf.Lerp(initialVolume, 1.0f, fadeTimer / fadeInTime);
+            audioSource.volume = Mathf.Lerp(initialVolume, finalVolume, fadeTimer / fadeInTime);
             if (fadeTimer >= fadeInTime)
             {
                 isFadingIn = false;
@@ -49,7 +50,7 @@ public class AudioScript : MonoBehaviour
         else if (isFadingOut)
         {
             fadeTimer += Time.deltaTime;
-            audioSource.volume = Mathf.Lerp(1.0f, initialVolume, fadeTimer / fadeOutTime);
+            audioSource.volume = Mathf.Lerp(finalVolume, initialVolume, fadeTimer / fadeOutTime);
             if (fadeTimer >= fadeOutTime)
             {
                 isFadingOut = false;
@@ -71,7 +72,7 @@ public class AudioScript : MonoBehaviour
         {
             Debug.LogWarning("Audio clip not found: " + songName);
         }
-        audioSource.volume = 0.0f;
+        audioSource.volume = 0.1f;
         initialVolume = audioSource.volume;
         isFadingIn = true;
         audioSource.Play();

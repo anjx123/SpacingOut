@@ -14,6 +14,10 @@ EXTERNAL FadeInCharacter(characterName, position, mood)
 
 EXTERNAL FadeOutCharacter(characterName)
 
+EXTERNAL playSound(soundName)
+
+EXTERNAL setLoop(isLoop)
+
 {setComponentFade("FadeScreen", false)}
 {setComponentFade("Dialogue Box", true)}
 
@@ -29,6 +33,8 @@ Now, let’s get started with content. I’m not going to go over the syllabus b
 There will be a quiz for that due tonight at 11:59. I hope you guys have done the posted pre-readings for our math section—
 
 {setName("Classmates")}
+
+
 
 There were pre-readings…?
 
@@ -83,6 +89,8 @@ Cuz if not…
 
 {ChangeMood("Lilac", "Beaming")}
 {ChangeMood("Violet", "Nonchalant")}
+{playSound("Actual Waffles")}
+{setLoop(true)}
 Wanna join our group?
 
 {setName("Mercury")}

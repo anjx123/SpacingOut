@@ -10,6 +10,7 @@ public class InkManager : MonoBehaviour
 {
 
     private CharacterManager characterManager;
+    private AudioScript audioManager;
 
     [SerializeField]
     private TextAsset inkJsonAsset;
@@ -27,6 +28,7 @@ public class InkManager : MonoBehaviour
     void Start()
     {
         characterManager = FindObjectOfType<CharacterManager>();
+        audioManager = FindObjectOfType<AudioScript>();
         StartStory();
     }
 
@@ -57,9 +59,12 @@ public class InkManager : MonoBehaviour
 
         story.BindExternalFunction("sceneLoader", () => sceneLoader.LoadNextScene());
 
-        story.BindExternalFunction("playSong", (string songName) => playSong(songName));
+        story.BindExternalFunction("playSound", (string soundName) => audioManager.Play(soundName));
 
-        story.BindExternalFunction("stopSong", (string songName) => stopSong(songName));
+        story.BindExternalFunction("stopSound", (string soundName) => audioManager.Stop(soundName));
+
+        story.BindExternalFunction("setLoop", (bool isLoop) => audioManager.Loop(isLoop));
+
         DisplayNextLine();
 
     }
@@ -73,16 +78,6 @@ public class InkManager : MonoBehaviour
         if(Input.GetMouseButtonUp(0)) {
             DisplayNextLine();
         }
-    }
-
-    //Effects: Plays a given song file by its name
-    public void playSong(string songName) {
-
-    }
-
-    //Effects: Stops playing a given song file by its name
-    public void stopSong(string songName) {
-
     }
 
 

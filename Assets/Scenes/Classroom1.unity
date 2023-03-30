@@ -1919,6 +1919,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   dialogueTrigger: {fileID: 415339035}
+  audioManager: {fileID: 2135158033}
 --- !u!1 &443631636
 GameObject:
   m_ObjectHideFlags: 0
@@ -4423,6 +4424,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   dialogueTrigger: {fileID: 910121288}
+  audioManager: {fileID: 2135158033}
 --- !u!1 &948214994
 GameObject:
   m_ObjectHideFlags: 0
@@ -5893,6 +5895,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   dialogueTrigger: {fileID: 1163233763}
+  audioManager: {fileID: 2135158033}
 --- !u!1 &1164100205
 GameObject:
   m_ObjectHideFlags: 0
@@ -7415,6 +7418,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   dialogueTrigger: {fileID: 1399069536}
+  audioManager: {fileID: 2135158033}
 --- !u!1 &1424881522
 GameObject:
   m_ObjectHideFlags: 0
@@ -11632,6 +11636,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2135158032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2135158034}
+  - component: {fileID: 2135158033}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2135158033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135158032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b3d8cc20d318e54da9ad23a93a90412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedSource: {fileID: 0}
+  audioTracks: []
+  audioClips:
+  - {fileID: 8300000, guid: c540f8026b627432fbc4546ebe88c7ed, type: 3}
+  - {fileID: 8300000, guid: 59b1675842bc04a5392b122b9891444a, type: 3}
+  fadeInTime: 0.1
+  fadeOutTime: 1
+--- !u!4 &2135158034
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135158032}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 540.83984, y: 317.51007, z: 722.736}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6605043496852542197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11686,6 +11741,10 @@ PrefabInstance:
     - target: {fileID: 6605043496029743446, guid: 1670082cef0a1b04dbba8ba65a60cae8, type: 3}
       propertyPath: m_Name
       value: SceneLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605043496029743446, guid: 1670082cef0a1b04dbba8ba65a60cae8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1670082cef0a1b04dbba8ba65a60cae8, type: 3}

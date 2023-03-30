@@ -84,7 +84,7 @@ public class AudioScript : MonoBehaviour
             {   
 
                 audioTracks[i].clip = audioClipDict[soundName];
-                activeTracks.Add(soundName, audioTracks[i]); // Associates an active track with the effect it is playing
+                activeTracks[soundName] = audioTracks[i];
 
                 audioTracks[i].volume = 0.1f;
                 initialVolume = audioTracks[i].volume;

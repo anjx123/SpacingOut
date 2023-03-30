@@ -8,12 +8,15 @@ public class InteractableObject : CollidableObject
 
     public DialogueTrigger dialogueTrigger;
 
+    public AudioScript audioManager;
+
     protected override void OnCollided(GameObject collidedObject)
     {
         if (collidedObject.tag == "Player")
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                audioManager.Play("Use");
                 OnInteract();
             }
         }

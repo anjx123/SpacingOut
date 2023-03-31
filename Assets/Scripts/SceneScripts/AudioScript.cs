@@ -5,10 +5,10 @@ using UnityEngine;
 public class AudioScript : MonoBehaviour
 {
     
-    private static int POOL_SIZE = 3;
+    private static int POOL_SIZE = 3; // Number of audio tracks instantiated when script is run
 
-    public AudioSource selectedSource;
-    public AudioSource[] audioTracks; // Array of all audioSources available to be played simultaneously
+    private AudioSource selectedSource;
+    private AudioSource[] audioTracks; // Array of all the available tracks that can play audio.
     private Dictionary<string, AudioSource> activeTracks; // Maps active tracks to the sound name they are playing;
 
 
@@ -28,8 +28,6 @@ public class AudioScript : MonoBehaviour
     void Start()
     {       
         // Load all audio clips and store them in the audioClipDict dictionary
-        // This dictionary only loads AudioClips, if you want to load extra information like a specific volume to play the song at
-        // create a new class and swap in that class for Audio Clip.
         audioClipDict = new Dictionary<string, AudioClip>();
         foreach (AudioClip clip in audioClips)
         {
@@ -72,8 +70,8 @@ public class AudioScript : MonoBehaviour
         }
     }
 
-    //Requires: Song provided needs to be loaded in, please run the stop command first this will play clips concurrently. 
-    // Finds the song that has been loaded in and plays it
+    //Requires: Song provided needs to be loaded in
+    // Finds the song that has been loaded in and plays it in a empty audioTrack
     public void Play(string soundName)
     {
     if (audioClipDict.ContainsKey(soundName))
@@ -115,7 +113,7 @@ public class AudioScript : MonoBehaviour
         
     }
 
-    //effects: Sets the song to loop, if you only want specific songs to loop, I recommend you create a new class to store that info.
+    //Effects: Sets the song to loop, if you only want specific songs to loop, I recommend you create a new class to store that info.
     public void Loop(string soundName, bool isLoop)
     {
         if (activeTracks.ContainsKey(soundName)) {

@@ -307,7 +307,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000030517578, y: -249.99991}
-  m_SizeDelta: {x: 1700, y: 500}
+  m_SizeDelta: {x: 1700, y: 440}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &221052607
 MonoBehaviour:
@@ -362,7 +362,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9b00c1ef73e862748a6421f99fb7c7b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3186cbcf857543547922fffbdf9623bc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -898,6 +898,7 @@ MonoBehaviour:
   inkJsonAsset: {fileID: 4900000, guid: e82c14aca0c47674aac0082d83dafce7, type: 3}
   textComponent: {fileID: 1354859438}
   nameBox: {fileID: 959369477}
+  sceneLoader: {fileID: 0}
 --- !u!4 &1451771798
 Transform:
   m_ObjectHideFlags: 0

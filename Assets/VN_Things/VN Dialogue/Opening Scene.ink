@@ -27,9 +27,9 @@ Copy that
 
 \*huff*
 
-Just a couple more minutes Mercury, you've been working your whole life for this moment
+(Just a couple more minutes Mercury, you've been working your whole life for this moment)
 
-Like touching down on an exotic new planet, a new frontier to explore… just like the greats
+(Think of it like… touching down on an exotic new planet! A new frontier to explore, just like the greats.)
 
 {setName("Fatherly Voice")}
 Mission Control, Hermes 1 is awaiting instructions, do I take this next right?
@@ -37,12 +37,6 @@ Mission Control, Hermes 1 is awaiting instructions, do I take this next right?
 
 {setName("Mercury")}
 Negative, 640 meters. 22 forward. I recommend slowing it up. 10 per cent.
-
-{setName("")}
-40 feet, down 2.5. Picking up some dust.
-
-{setName("Mercury")}
-Everyone is cheering you on, and waiti-
 
 {setName("Bratty Voice")}
 Mommm, Dad and Mercury are nerding out againnnn.
@@ -57,37 +51,35 @@ But it's so annoyinggggg.
 
 {setName("Motherly Voice")}
 
-Well you won’t be seeing him very often now that he's in Uni so maybe cherish it this last time.
-
-VIT is just so far that its not easy to come see him often…
+Well you better cherish it, Vancouver’s Institution of Technology is quite far out. It’ll be tough to see him more later.
 
 {setName("Bratty Voice")}
 Hah, like I will, he's so annoying.
 
 {setName("Fatherly Voice")}
-Vinny, listen to your mother, and be a little proud of your brother.
-
-After all, he made it into the Sci-On program, thats quite the accomplishment you know.
+Vinny, listen to your mother and be a little proud of your brother! He made it into the Sci-On program, that's quite the accomplishment you know.
 
 {setName("Bratty Voice")}
-Yeah yeah yeah, thousands of applicants each year and only 50 can get in, you've said it so many times already!
+Yeah yeah yeah, thousands of applicants each year and only 50 can get in. So very prestigious. Has the story changed from the last 50 times you told it?
 
 {setName("Fatherly Voice")}
-Well the prestige is nice but obviously not the main plus, think of all the connections he will make, research papers to write, and people he will meet.  
+Well, the prestige IS nice… But obviously not the only thing! 
+
+Think of all the connections he will make, research papers he’ll write, and the people. Think of all the people he will meet!
 
 {setName("Robotic Voice")}
 Recalculating…
 
 {setName("Fatherly Voice")}
-Shoot, you meant that right turn…
+Shoot, you meant THAT right turn…
 
 Mission control, could I get a recalculation of trajectory, my sensors were off.
 
 {setName("Mercury")}
-Sure… you can make another right turn in about 800.
+Yeah, no problem. Next right turn coming right up, 800 meters.
 
 {setName("Motherly Voice")}
-I see thats why they have you do the groundwork 
+And THAT why we have you do the groundwork 
 
 {setName("Fatherly Voice")}
 \*Ahem*
@@ -106,12 +98,14 @@ Copy that, engaging radio silence
 …
 
 {setName("Mercury")}
-I wonder if what my father has said will be true, meeting new people, creating connections…
+(I wonder if Dad will be right, meeting new people, creating connections…)
 
-That seems just as foreign as the soil I will be living on for the next 8 months…
-1…
+(That seems just as foreign as the soil I will be living on for the next 8 months…
+1…)
 
-What if I’m not good enough? What if I fail? Maybe I don’t deserve to succeed. Many have perished on their explorations before…
+(But what if I fail? Why should I be the one to succeed when many others have perished on their explorations before…)
+
+{setName("")}
 
 [Time Passes]
 
@@ -150,15 +144,15 @@ Thanks Vinny, I appreciate you.
 Hmph.
 
 {setName("Mercury")}
-But I guess I won’t have to face this alone.
+(But I guess I won’t have to face this alone.)
 
-I’m sure Mission Control back home has me covered whatever the encounter.
+(I’m sure Mission Control back home has me covered whatever the encounter.)
 
-It would be a shame to waste such an opportunity to explore by not taking a couple of risks and pressing forward. 
+(It would be a shame to waste such an opportunity to explore by not taking a couple of risks and pressing forward.)
 
-To paraphrase the great Neil Armstrong, 
+(To paraphrase the great Neil Armstrong,)
 
-"Although that’s one small step for now, that’ll be one giant leap forever"
+("Although that’s one small step for now, that’ll be one giant leap forever")
  
 {setComponentFade("FadeScreen", true)}
 {sceneChange("Main Menu")}

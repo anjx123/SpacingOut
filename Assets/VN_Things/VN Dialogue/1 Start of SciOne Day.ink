@@ -38,13 +38,13 @@ EXTERNAL sceneLoader()
 
 \*walks up the stairs*
 
-(What would even be the best way to start a conversation?)
+(How do you even start a conversation naturally?)
 
 (Ask about their major? Wouldn’t they have heard this question a million times by now?)
 
 Sigh…
 
-(Ah, whatever. I guess I'll worry about that later…)
+(Ah, whatever. Problem for future me to deal with…)
 
 (Now… where is Room 220?)
 
@@ -57,29 +57,34 @@ Room 208…
 (A poster from the Astronomy Club?)
 
 {setName("Poster")}
-“Astronomy Club… Observatory reservations… Guest speakers from NASA…”
+“Astronomy Club… Observatory reservations… Guest speakers from NASA… Private telescopes…”
 
 {setName("Mercury")}
-(Woah... okay, I’ll definitely have to check it out later.)
+(Woah... Neat. I’ll definitely have to check it out later.)
 
+{setName("")}
 \*photo click*
+{setName("Mercury")}
 
 (Hm, I guess clubs can be a good way to start a conversation.
 
-(Maybe something like, “Are you planning to join any clubs?” and then you can ask follow-up questions AND you get to know about the person’s interests. Wait, that’s really good, I’m—) 
+(Maybe something like, “Hm, I guess clubs can be a good way to start a conversation. Maybe something like, “Are you planning to join any clubs?”)
+
+(And then you can ask follow-up questions AND you get to know about the person’s interests. Hold up, I’m really onto something—) 
 
 Ah-
 
+{setName("")}
 \*thunk*
+{setName("Mercury")}
 
-(Did I actually just bump into someone on the first day of class, man what are you doing Mercury?)
+Oof-
 
 {setName("Unknown Student")}
 Ah, my bad, dude. I wasn’t looking.
 
 {setName("Mercury")}
 It’s fine. Sorry… I also wasn’t paying attention.
-(Do I have no spatial awareness?)
 
 {setName("Unknown Student")}
 …
@@ -97,7 +102,7 @@ Um, actually—
 —do you happen to know where Room 312 is? I know it’s upstairs and all, but I can’t find the stairs.
 
 {setName("Mercury")}
-Uh… 312? From where we are… If you’re just looking for the closest set of stairs, it’s down the hallway, that way.
+Oh uh… 312? From where we are… If you’re just looking for the closest set of stairs, it’s down the hallway, that way.
 
 {setName("Unknown Student")}
 But for the fastest route to 312, um, you would go this way. 312 is closer to that side, yeah.
@@ -107,10 +112,11 @@ But for the fastest route to 312, um, you would go this way. 312 is closer to th
 
 {setName("Mercury")}
 Hahaha, no… I’ve just… been to this building before.
+
 (I totally memorized it.)
 
 {setName("Unknown Student")}
-Ah! That makes sense. Anyways, I really gotta go. Sorry again… and thanks for the help! Cheers.
+Ah! Cool dude. Anyways, I really gotta go. Sorry again… and thanks for the help! Cheers.
 
 {setName("Mercury")}
 Yeah, thanks. Don’t mention it.
@@ -118,15 +124,26 @@ Yeah, thanks. Don’t mention it.
 …
 
 {setComponentFade("FadeScreen", true)}
-(... Why did I feel the need to lie about that? Am I a compulsive liar?! Ahhhh, it wasn’t even anything super embarrassing…! Maybe I should’ve said—)
+Mercury: (STUPID. Why in the world would I have to lie about that? Am I a compulsive liar?! Ahhhh, he just asked for directions! Directions! If I had just said—)
+
+...
+
+{setComponentFade("FadeScreen", false)}
 
 (—though that doesn’t seem very effective, and…)
 
 (Wait…)
 
+Room 228??!
+
+
+{setComponentFade("FadeScreen", true)}
+
+…
+
 {setComponentFade("Door BG", true)}
 
-Room 228??!
+…
 
 …
 
@@ -134,14 +151,13 @@ Room 228??!
 
 Huff… huff… 
 
-(Goddamn, for someone who memorized the layout of every floor of this entire building, I should really be the last person to be walking to the wrong room…) 
+(C’mon, get it together. For someone who had supposedly memorized the layout of every floor of this building, I sure am great at walking into the wrong room.)
 
-(Ah… Why am I so dumb… I spaced out way too much…)
+(Ah… Definitely left my brain at home, I am spacing out way too much…)
 
-(… Whatever. I can’t care about that right now. I’m almost late for class… Room 220… So this is where I’m going to be for the next eight months…)
+(… Whatever. It really doesn’t matter anymore. I’m almost late for class… Room 220… Hello “home” for the next 8 months…)
 
 {setComponentFade("FadeScreen", true)}
-
 {sceneLoader()}
 
 -> END

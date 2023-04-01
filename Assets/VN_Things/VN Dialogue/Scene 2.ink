@@ -20,11 +20,17 @@ EXTERNAL setLoop(soundName, isLoop)
 
 EXTERNAL stopSound(soundName)
 
+EXTERNAL sceneLoader()
+
 {setComponentFade("FadeScreen", false)}
 {setComponentFade("Dialogue Box", true)}
 
 {setName("Professor")}
-Alright everybody! Lectures starting now! 
+All right, guys! It’s 9 o’clock… We’re going to start class. Please quiet down!
+
+{setName("")}
+...
+{setName("Professor")}
 
 First of all, I’d like to congratulate you all for making it to this program. 
 
@@ -36,11 +42,9 @@ There will be a quiz for that due tonight at 11:59. I hope you guys have done th
 
 {setName("Classmates")}
 
-
-
 There were pre-readings…?
 
-Bruh… This is the first lecture. Cringe.
+Bruh… This is the first lecture.
 
 {setName("Mercury")}
 
@@ -64,7 +68,7 @@ I’ll give you guys five minutes.
 
 (Man, I want to go home.)
 
-(“Get into groups”?… I don't even know anyone here… Ahhhh, this sucks.)
+(“Get into groups”?… I don't even know anyone here… ugh, this sucks.)
 
 (I don’t want to get up to go find people to group with…)
 
@@ -72,15 +76,16 @@ I’ll give you guys five minutes.
 
 …
 
-(… The groups are starting to solidify… Oh no. It’s doomed. Maybe I shouldn’t have sat here—)
+(… The groups are starting to solidify… Oh no. It’s doomed. Maybe I shouldn’t have sat here. Maybe I should’ve just stayed home—)
 
 {ShowCharacter("Lilac", "Left", "Silhouette")}
 {ShowCharacter("Violet", "Right", "Silhouette")}
 
-
+{setName("")}
 \*tap tap tap*
+{setName("Mercury")}
 
-(...?)
+...?
 
 {setComponentFade("FadeScreen", false)}
 
@@ -140,19 +145,19 @@ Haha, thanks…? I think your name is cool as well…
 
 {setName("Lilac")}
 {ChangeMood("Lilac", "Nonchalant")}
-Heh, thanks.
+Thanks.
 
 {ChangeMood("Lilac", "Happy")}
  Anyways, is there a cool origin story for your name? I’d imagine that your parents must’ve been really into space stuff. Are they astronomers or the like?
 
 {setName("Mercury")}
-(The conversation is flowing so smoothly…! It’s not awkward or forced at all! How does she constantly know what to say next?)
 
 So, uh—
 
 {setName("Violet")}
 His name could apply to chemistry as well. And by your logic, our parents must’ve been really into flowers and are botanists.
 
+{ChangeMood("Lilac", "Nonchalant")}
 {setName("Lilac")}
 Well, flower names are much more common than planet names, right? Besides, I don’t see the appeal in naming your child after a toxic heavy metal.
 
@@ -195,7 +200,8 @@ Yeah, duh? Who wouldn’t think that’s cool, having an astronaut as a parent. 
 Ah, sorry. I got a bit too excited.
 
 
-{stopSound("Actual Waffles")}
+// I think its nice to have the audio play throughout
+// {stopSound("Actual Waffles")}
 
 {setName("Lilac")}
 {ChangeMood("Lilac", "Beaming")}
@@ -234,8 +240,8 @@ Well… I think it’s good to know what you don’t want to do.
 Yeah, for sure.
 
 {setName("Violet")}
-{ChangeMood("Violet", "NonchalantSide")}
-*mutters* But somehow, your parents just can’t seem to get off your ass about it—
+{ChangeMood("Violet", "Nonchalant")}
+\*mutters* But somehow, your parents just can’t seem to get off your ass about it—
 [Looking down grimace]
 
 // Grumpy expression needed
@@ -280,8 +286,10 @@ To answer your question… Hold on. Let me kill this thing first.
 {setName("Mercury")}
 …
 
+{ChangeMood("Violet", "Nonchalant")}
 {setName("Violet")}
 Okay. To answer your question, I am thinking comp-sci.
+{ChangeMood("Violet", "Concentrated")}
 
 {setName("Mercury")}
 I see.
@@ -295,8 +303,10 @@ I see.
 {setName("Mercury")}
 Is there a particular reason why?
 
+{ChangeMood("Violet", "Nonchalant")}
 {setName("Violet")}
 It’s good money and I’m decent at it.
+{ChangeMood("Violet", "Concentrated")}
 
 {setName("Mercury")}
 Ah…
@@ -316,10 +326,41 @@ Let’s pass it around and fill in our names and student numbers.
 {setName("Violet")}
 …
 
+{setName("Lilac")}
+{ChangeMood("Lilac", "Happy")}
+This gremlin here… She scored top 10 in the National Computing Competition three times.
+
+{setName("Violet")}
+{ChangeMood("Violet", "Nonchalant")}
+Programming is just a small part of CS, I've still got a lot to learn.
+
+{setName("Mercury")}
+Oh, wow… That’s impressive.
+
+ (That’s super impressive! Is everyone in SciON just this crazy?! Compared to them, what have I accomplished…? I don’t think I’ve ever done anything amazing like that…)
+ 
+{setName("Lilac")}
+{ChangeMood("Lilac", "Nonchalant")}
+ Right? You two have such cool achievements and aspirations… Darn, am I the only one here with nothing interesting to share?
+ 
+{setName("Violet")}
+…
+
+Your pot-au-feu is pretty good, I guess…
+
+{setName("Lilac")}
+{ChangeMood("Lilac", "Beaming")}
+… Heh, thanks, Violet! I love you too!
+
+{setName("Violet")}
+Ack, get off! I’m in a boss fight!!
+
+{setName("Mercury")}
+(Seems like there’ll never be a dull moment with these two around, maybe this year wouldn’t be so bad after all…)
+
 {setComponentFade("FadeScreen", true)}
-
-{sceneChange("Gameplay")}
-
+{stopSound("Actual Waffles")}
+{sceneLoader()}
 
 -> END
 

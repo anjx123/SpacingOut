@@ -6,7 +6,7 @@ using TMPro;
 using Ink.Runtime;
 using UnityEngine.SceneManagement;
 
-public class InkManager : MonoBehaviour
+public class InkManager : MonoBehaviour, IDataPersistence
 {
 
     private CharacterManager characterManager;
@@ -114,6 +114,22 @@ public class InkManager : MonoBehaviour
        
         uiObject.GetComponent<FadeController>().setFade(fade);
  
+    }
+
+    public void LoadData(GameData data)
+    {
+        if (data.currentScene != SceneManager.GetActiveScene().buildIndex)
+        {
+            if (SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                SceneManager.LoadScene(data.currentScene);
+            }
+        }
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.currentScene = SceneManager.GetActiveScene().buildIndex;
     }
 
 }

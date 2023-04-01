@@ -594,6 +594,63 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &412421070
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8870225251735129825, guid: e0cecd9d2e2bbbc40ae966e050ee83d7, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870225251735129825, guid: e0cecd9d2e2bbbc40ae966e050ee83d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870225251735129825, guid: e0cecd9d2e2bbbc40ae966e050ee83d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870225251735129825, guid: e0cecd9d2e2bbbc40ae966e050ee83d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870225251735129825, guid: e0cecd9d2e2bbbc40ae966e050ee83d7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870225251735129825, guid: e0cecd9d2e2bbbc40ae966e050ee83d7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870225251735129825, guid: e0cecd9d2e2bbbc40ae966e050ee83d7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870225251735129825, guid: e0cecd9d2e2bbbc40ae966e050ee83d7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870225251735129825, guid: e0cecd9d2e2bbbc40ae966e050ee83d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870225251735129825, guid: e0cecd9d2e2bbbc40ae966e050ee83d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870225251735129825, guid: e0cecd9d2e2bbbc40ae966e050ee83d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870225251735129827, guid: e0cecd9d2e2bbbc40ae966e050ee83d7, type: 3}
+      propertyPath: m_Name
+      value: DataPersistenceManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e0cecd9d2e2bbbc40ae966e050ee83d7, type: 3}
 --- !u!1 &596105585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,8 +1068,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b3d8cc20d318e54da9ad23a93a90412, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedSource: {fileID: 0}
-  audioTracks: []
   audioClips:
   - {fileID: 8300000, guid: 4d5cc591a8e1fbd4ab3bfd71f5e4c96e, type: 3}
   fadeInTime: 1

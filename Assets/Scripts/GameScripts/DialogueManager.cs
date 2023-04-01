@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
-public class DialogueManager : MonoBehaviour
+public class DialogueManager : MonoBehaviour, IDataPersistence
 {
     public GameObject dialoguePanel;
 
@@ -22,6 +23,9 @@ public class DialogueManager : MonoBehaviour
     private int totalSentenceCount;
 
     private bool inDialogue = false;
+
+    private int scene = 3;
+
 
     void Start ()
     {
@@ -112,5 +116,21 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void LoadData(GameData data)
+    {
+        if (data.currentScene != SceneManager.GetActiveScene().buildIndex)
+        {
+            if (SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                SceneManager.LoadScene(data.currentScene);
+            }
+        }
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.currentScene = scene;
     }
 }

@@ -37,6 +37,7 @@ EXTERNAL sceneLoader()
 I wish I knew about those readings, really feeling the rust here. How’s it going for you V?
 
 
+
 {setName("Violet")}
 {ChangeMood("Violet", "Concentrated")}
 Oh, I’m not doing it. Sauce me the answers later. I need farm mats for the new character.
@@ -160,7 +161,7 @@ If she’ll pick up.
 …
 
 {setName("")}
-\*Burst into laughter on both sides*
+\*Mercury and Lilac burst into laughter"
 
 {setComponentFade("FadeScreen", true)}
 {stopSound("Actual Waffles")}

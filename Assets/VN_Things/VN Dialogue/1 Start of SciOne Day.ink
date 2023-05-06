@@ -4,6 +4,8 @@ EXTERNAL HideCharacter(characterName)
 
 EXTERNAL ChangeMood(characterName, mood)
 
+EXTERNAL ChangePosition(characterName, position)
+
 EXTERNAL setName(name)
 
 EXTERNAL setComponentFade(componentName, fade)
@@ -158,6 +160,7 @@ Huff… huff…
 (… Whatever. It really doesn’t matter anymore. I’m almost late for class… Room 220… Hello “home” for the next 8 months…)
 
 {setComponentFade("FadeScreen", true)}
+{setComponentFade("Dialogue Box", false)}
 {sceneLoader()}
 
 -> END

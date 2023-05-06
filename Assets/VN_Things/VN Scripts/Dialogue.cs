@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+//This class handles Rolling Text behavior, Use this in place of TextMeshProUGUI components to set text
 public class Dialogue : MonoBehaviour
 {
     private const float DEFAULTROLLSPEED = 50f;
@@ -45,7 +46,7 @@ public class Dialogue : MonoBehaviour
             lineIsFinished = false;
         }
 
-        if(Input.GetMouseButtonUp(0))
+        if(Input.GetMouseButtonUp(0) || Input.GetKeyDown(KeyCode.Space))
         {
             if(textComponent.text != currentLine)
             {

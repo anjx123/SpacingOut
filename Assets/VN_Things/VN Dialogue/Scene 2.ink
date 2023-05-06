@@ -4,6 +4,8 @@ EXTERNAL HideCharacter(characterName)
 
 EXTERNAL ChangeMood(characterName, mood)
 
+EXTERNAL ChangePosition(characterName, position)
+
 EXTERNAL setName(name)
 
 EXTERNAL setComponentFade(componentName, fade)
@@ -315,7 +317,7 @@ Ah…
 …
 
 {setName("Lilac")}
-{FadeInCharacter("Lilac", "Left", "Nonchalant")}
+{ShowCharacter("Lilac", "Left", "Nonchalant")}
 Just “decent” my ass. I’m back with the form. 
 
 Let’s pass it around and fill in our names and student numbers.
@@ -359,6 +361,7 @@ Ack, get off! I’m in a boss fight!!
 (Seems like there’ll never be a dull moment with these two around, maybe this year wouldn’t be so bad after all…)
 
 {setComponentFade("FadeScreen", true)}
+{setComponentFade("Dialogue Box", true)}
 {stopSound("Actual Waffles")}
 {sceneLoader()}
 

@@ -32,7 +32,7 @@ EXTERNAL sceneLoader()
 {setComponentFade("FadeScreen", false)}
 Hey.
 
-{FadeInCharacter("Violet", "Center", "Nonchalant")}
+{ShowCharacter("Violet", "Center", "Nonchalant")}
 
 
 Thanks for that.

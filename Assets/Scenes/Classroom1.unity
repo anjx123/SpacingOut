@@ -2135,7 +2135,7 @@ MonoBehaviour:
   yesbutton: {fileID: 1616095194}
   noButton: {fileID: 2057137417}
   sceneLoader: {fileID: 826096548}
-  dialogueText: {fileID: 1693216268}
+  dialogueText: {fileID: 1693216269}
   nameText: {fileID: 34516328}
 --- !u!4 &473392966
 Transform:
@@ -9443,6 +9443,7 @@ GameObject:
   - component: {fileID: 1693216266}
   - component: {fileID: 1693216267}
   - component: {fileID: 1693216268}
+  - component: {fileID: 1693216269}
   m_Layer: 5
   m_Name: Body text
   m_TagString: Untagged
@@ -9567,6 +9568,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1693216269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693216265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52093942b6ea0a043bd465300dbbac71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1693216268}
+  rollingSpeed: 50
 --- !u!1 &1727148860
 GameObject:
   m_ObjectHideFlags: 0
@@ -11665,8 +11680,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b3d8cc20d318e54da9ad23a93a90412, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedSource: {fileID: 0}
-  audioTracks: []
   audioClips:
   - {fileID: 8300000, guid: c540f8026b627432fbc4546ebe88c7ed, type: 3}
   - {fileID: 8300000, guid: 59b1675842bc04a5392b122b9891444a, type: 3}

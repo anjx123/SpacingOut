@@ -113,7 +113,7 @@ public class CharacterManager : MonoBehaviour
         ChangeMood(nameEnum, moodEnum);
     }
 
-    public void ChangeMood(CharacterName name, CharacterMood mood)
+    private void ChangeMood(CharacterName name, CharacterMood mood)
     {
         var character = characters.FirstOrDefault(x => x.Name == name);
 
@@ -127,6 +127,40 @@ public class CharacterManager : MonoBehaviour
             character.ChangeMood(mood);
         }
     }
+
+    public void ChangePosition(string name, string position)
+    {
+        if (!Enum.TryParse(name, out CharacterName nameEnum))
+        {
+            Debug.LogWarning($"Failed to parse character name to character enum: {name}");
+            return;
+        }
+        
+        if (!Enum.TryParse(position, out CharacterPosition positionEnum))
+        {
+            Debug.LogWarning($"Failed to parse character mood to enum: {position}");
+            return;
+        }
+
+        ChangePosition(nameEnum, positionEnum);
+    }
+
+    private void ChangePosition(CharacterName name, CharacterPosition position)
+    {
+        var character = characters.FirstOrDefault(x => x.Name == name);
+
+        if (character?.IsShowing != true)
+        {
+            Debug.LogWarning($"Character {name} is not currently shown. Can't change the position.");
+            return;
+        }
+        else
+        {
+            character.ChangePosition(position);
+        }
+    }
+
+
 
     public void FadeInCharacter(CharacterName name, CharacterPosition position, CharacterMood mood)
     {

@@ -673,6 +673,7 @@ GameObject:
   - component: {fileID: 596105586}
   - component: {fileID: 596105588}
   - component: {fileID: 596105587}
+  - component: {fileID: 596105589}
   m_Layer: 5
   m_Name: Dialogue (TMP)
   m_TagString: Untagged
@@ -799,6 +800,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 596105585}
   m_CullTransparentMesh: 1
+--- !u!114 &596105589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596105585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52093942b6ea0a043bd465300dbbac71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 596105587}
+  rollingSpeed: 50
 --- !u!1 &1451771796
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,6 +845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inkJsonAsset: {fileID: 4900000, guid: 4cb62abea42fc1a4fa07882fb92fbe73, type: 3}
   textComponent: {fileID: 596105587}
+  dialogueText: {fileID: 596105589}
   nameBox: {fileID: 2014722374}
   sceneLoader: {fileID: 519889436}
 --- !u!4 &1451771798

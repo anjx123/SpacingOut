@@ -154,6 +154,7 @@ Hmph.
 
 ("Although that’s one small step for now, that’ll be one giant leap forever")
  
+{setComponentFade("Dialogue Box", false)}
 {setComponentFade("FadeScreen", true)}
 {sceneChange("Main Menu")}
 

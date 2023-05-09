@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
 
     public SceneTransition sceneLoader;
 
-    public TextMeshProUGUI dialogueText;
+    public Dialogue dialogueText;
 
     public TextMeshProUGUI nameText;
 
@@ -27,6 +27,7 @@ public class DialogueManager : MonoBehaviour
     {
         sentences = new Queue<string>();
         clearPanel();
+
     }
 
     public void StartDialogue (RPGDialogue dialogue)
@@ -36,7 +37,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        Time.timeScale = 0;
+        Time.timeScale = 0; //Time is frozen yet I can still turn and iteract BUG
 
         dialoguePanel.SetActive(true);
         yesbutton.SetActive(false);
@@ -88,7 +89,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-        dialogueText.text = sentence;
+
+        dialogueText.SetLine(sentence);
     }
 
     void EndDialogue()
@@ -102,13 +104,16 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Space))
+        if (dialogueText.FinishedLine())
         {
-            if (inDialogue)
+            if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKey(KeyCode.Space))
             {
-                if (sentences.Count == 0 || sentences.Count == 5)
+                if (inDialogue)
                 {
-                    DisplayNextSentence();
+                    if (sentences.Count == 0 || sentences.Count == 5)
+                    {
+                        DisplayNextSentence();
+                    }
                 }
             }
         }

@@ -3,67 +3,87 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+//This class handles Rolling Text behavior, Use this in place of TextMeshProUGUI components to set text
 public class Dialogue : MonoBehaviour
 {
-    public TextMeshProUGUI textComponent;
-    public string[] lines;
-    public float textSpeed;
+    private const float DEFAULTROLLSPEED = 50f;
 
+    public TextMeshProUGUI textComponent;
+    private string currentLine;
+
+    public float rollingSpeed;
     private int index;
+
+    private bool lineIsFinished;
+
+    public void SetLine(string line) 
+    {
+        textComponent.text = string.Empty;
+        this.currentLine = line;
+        StartDialogue();
+    }
 
 
     // Start is called before the first frame update
     void Start()
     {
+        if (rollingSpeed == 0)
+        {
+            rollingSpeed = DEFAULTROLLSPEED;
+        }
         textComponent.text = string.Empty;
-        StartDialogue();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (textComponent.text == currentLine)
         {
-            if(textComponent.text == lines[index])
-            {
-                NextLine();
-            }
-            else
+            lineIsFinished = true;
+        } else 
+        {
+            lineIsFinished = false;
+        }
+
+        if(Input.GetMouseButtonUp(0) || Input.GetKeyDown(KeyCode.Space))
+        {
+            if(textComponent.text != currentLine)
             {
                 StopAllCoroutines();
-                textComponent.text = lines[index];
+                textComponent.text = currentLine;
             }
         }
     }
 
+
     void StartDialogue()
     {
-        index = 0;
         StartCoroutine(TypeLine());
-
     }
 
     //Effects: Adds the rolling dialogue effect to the text
     IEnumerator TypeLine()
     {
-        foreach (char c in lines[index].ToCharArray())
+
+        int currentIndex = 0;
+        string displayedText = "";
+
+        while (currentIndex < currentLine.Length)
         {
-            textComponent.text += c;
-            yield return new WaitForSeconds(textSpeed);
+            displayedText += currentLine[currentIndex];
+            currentIndex++;
+
+            textComponent.text = displayedText;
+
+            yield return new WaitForSecondsRealtime(1f / rollingSpeed);
         }
+        
     }
 
-    void NextLine()
+    public bool FinishedLine()
     {
-        if (index < lines.Length - 1)
-        {
-        index++;
-        textComponent.text = string.Empty;
-        StartCoroutine(TypeLine());
-        }
-        else
-        {
-        gameObject.SetActive(false);
-        }
+        return lineIsFinished;
     }
+
 }

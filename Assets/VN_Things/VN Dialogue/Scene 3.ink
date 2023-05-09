@@ -4,6 +4,8 @@ EXTERNAL HideCharacter(characterName)
 
 EXTERNAL ChangeMood(characterName, mood)
 
+EXTERNAL ChangePosition(characterName, position)
+
 EXTERNAL setName(name)
 
 EXTERNAL setComponentFade(componentName, fade)
@@ -37,6 +39,7 @@ EXTERNAL sceneLoader()
 I wish I knew about those readings, really feeling the rust here. How’s it going for you V?
 
 
+
 {setName("Violet")}
 {ChangeMood("Violet", "Concentrated")}
 Oh, I’m not doing it. Sauce me the answers later. I need farm mats for the new character.
@@ -59,16 +62,16 @@ Have you done question 4 yet?
 Sure, just give me a sec. Uh, okay. Here it is.
 
 {setName("Lilac")}
-{ChangeMood("Lilac", "Happy")}
+{ChangeMood("Lilac", "Nonchalant")}
 Hmm? What did you do here?
 
 {setName("Mercury")}
 Oh I uhh, complete the square.
 
 {setName("Lilac")}
-{ChangeMood("Lilac", "Nonchalant")}
 Wait, how do you complete the square again?
 
+{ChangePosition("Lilac", "Center")}
 \*Lilac moves closer*
 
 {setName("Mercury")}
@@ -77,15 +80,19 @@ To complete the square you first…
 {setComponentFade("FadeScreen", true)}
 {setName("")}
 …
-{setComponentFade("FadeScreen", false)}
+
 
 {setName("Lilac")}
 … So you move that there… Ohhhh, you factor it out instead… and then cancel…
+
+{setComponentFade("FadeScreen", false)}
 
 {setName("Mercury")}
 Exactly, you got it!
 
 {setName("Lilac")}
+
+{ChangeMood("Lilac", "Beaming")}
 Aww man, it’s so much easier once you lay it out. Thanks for your guidance Houston!
 
 {setName("Mercury")}
@@ -98,11 +105,15 @@ Oh! Um, it’s nothing. Happy to help.
 A few moments later…
 {setComponentFade("FadeScreen", false)}
 
+
+{ChangeMood("Lilac", "Happy")}
 And… Done! Thanks for all the help, Mercury. I really appreciate it.
 
 {setName("Mercury")}
 Ah, it’s no problem. It was a good review for me as well.
 
+
+{ChangeMood("Lilac", "Nonchalant")}
 Do you have experience with tutoring? Your explanations are really easy to understand.
 {setName("Mercury")}
 My mom and dad are both pretty busy, so someone’s gotta make sure my little sister learns her times table.
@@ -128,6 +139,8 @@ And before I knew it, here I am.
 Oh wow. That must have been…uh…
 
 {setName("Lilac")}
+
+{ChangeMood("Lilac", "Happy")}
 Well, it really doesn’t matter much anymore. I’m here, and that’s what matters right?
 
 At least, I’ve got a whole year to think about what I want to do right? Afterall, biomed is such a wide field. Genealogy, microbio, biochem, pharmacology-
@@ -160,9 +173,12 @@ If she’ll pick up.
 …
 
 {setName("")}
-\*Burst into laughter on both sides*
+
+{ChangeMood("Lilac", "Beaming")}
+\*Mercury and Lilac burst into laughter"
 
 {setComponentFade("FadeScreen", true)}
+{setComponentFade("Dialogue Box", false)}
 {stopSound("Actual Waffles")}
 {sceneLoader()}
 

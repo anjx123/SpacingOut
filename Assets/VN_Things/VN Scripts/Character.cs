@@ -89,10 +89,23 @@ public class Character : MonoBehaviour
         UpdateSprite();
     }
 
+    public void ChangePosition(CharacterPosition position)
+    {
+        Position = position;
+        SetAnimationValues();
+        LeanTween.moveX(gameObject, onScreenX, animationSpeed).setEase(LeanTweenType.easeInOutExpo).setOnComplete(() =>
+        {
+            IsShowing = true;
+        });
+    }
+
+    //Effects: Updates mood;
     private void UpdateSprite()
     {
         var sprite = _moods.GetMoodSprite(Mood);
         var image = GetComponent<Image>();
+
+        
 
         image.sprite = sprite;
         image.preserveAspect = true;

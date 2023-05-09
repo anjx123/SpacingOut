@@ -17,7 +17,7 @@ public class InkManager : MonoBehaviour
     private Story story;
 
     [SerializeField]
-    private TextMeshProUGUI textComponent;
+    private Dialogue dialogueText;
     public TMP_Text nameBox;
 
     public SceneTransition sceneLoader;
@@ -57,6 +57,9 @@ public class InkManager : MonoBehaviour
         story.BindExternalFunction("ChangeMood", (string name, string mood) 
             => characterManager.ChangeMood(name, mood));
 
+        story.BindExternalFunction("ChangePosition", (string name, string position) 
+            => characterManager.ChangePosition(name, position));
+
         story.BindExternalFunction("sceneLoader", () => sceneLoader.LoadNextScene());
 
         story.BindExternalFunction("playSound", (string soundName) => audioManager.Play(soundName));
@@ -72,12 +75,18 @@ public class InkManager : MonoBehaviour
     // Update is called once per frame, waits for space or mouse press to continue dialogue
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) {
+        if (dialogueText.FinishedLine())
+        {
+            if(Input.GetKeyDown(KeyCode.Space)) 
+            {
             DisplayNextLine();
-        } 
-        if(Input.GetMouseButtonUp(0)) {
+            } 
+            if(Input.GetMouseButtonUp(0)) 
+            {
             DisplayNextLine();
+            }
         }
+        
     }
 
 
@@ -87,7 +96,7 @@ public class InkManager : MonoBehaviour
 
         string text = story.Continue(); // gets next line
         text = text?.Trim(); // removes white space from text
-        textComponent.text = text; // displays new text
+        dialogueText.SetLine(text);
     }
 
     //Effects: Swaps this scene with the scene of the given name;

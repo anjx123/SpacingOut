@@ -5,26 +5,26 @@ using UnityEngine;
 public class AudioScript : MonoBehaviour
 {
     
-    private static int POOL_SIZE = 3; // Number of audio tracks instantiated when script is run
+    private static int POOL_SIZE = 3; 
 
     private AudioSource selectedSource;
-    private AudioSource[] audioTracks; // Array of all the available tracks that can play audio.
+    private AudioSource[] audioTracks; // Array of all the available sources that can play audio.
     private Dictionary<string, AudioSource> activeTracks; // Maps active tracks to the sound name they are playing;
 
 
     public AudioClip[] audioClips; // Array of all audio clips in the project you want to preload
     private Dictionary<string, AudioClip> audioClipDict; // Dictionary mapping audio clip names to audio clip objects
 
-    public float fadeInTime = 0.1f; //Might want to add to the inky function a fade time, but this constant is here if you need it. 
+    public float fadeInTime = 0.1f; 
     public float fadeOutTime = 1.0f;
 
     private bool isFadingIn = false;
     private bool isFadingOut = false; 
-    private float fadeTimer = 0.0f; //A timer that keeps track of how long the fade has been going on.
+    private float fadeTimer = 0.0f; 
     private float initialVolume = 0.1f; 
     private float finalVolume = 0.4f;
 
-    // Start is called before the first frame update
+    
     void Start()
     {       
         // Load all audio clips and store them in the audioClipDict dictionary
@@ -113,7 +113,7 @@ public class AudioScript : MonoBehaviour
         
     }
 
-    //Effects: Sets the song to loop, if you only want specific songs to loop, I recommend you create a new class to store that info.
+    //Effects: Sets the given song to loop,
     public void Loop(string soundName, bool isLoop)
     {
         if (activeTracks.ContainsKey(soundName)) {

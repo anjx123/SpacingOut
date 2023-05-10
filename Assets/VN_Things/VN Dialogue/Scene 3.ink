@@ -49,6 +49,8 @@ Oh, I’m not doing it. Sauce me the answers later. I need farm mats for the new
 {setName("Lilac")}
 And there she goes again. 
 
+{HideCharacter("Violet")}
+
 {ChangeMood("Lilac", "Happy")}
 How’s it going for you, Mercury?
 
@@ -79,12 +81,14 @@ To complete the square you first…
 
 {setComponentFade("FadeScreen", true)}
 {setName("")}
+
 …
 
 
 {setName("Lilac")}
 … So you move that there… Ohhhh, you factor it out instead… and then cancel…
 
+{HideCharacter("Violet")}
 {setComponentFade("FadeScreen", false)}
 
 {setName("Mercury")}

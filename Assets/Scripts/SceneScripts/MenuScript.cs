@@ -52,6 +52,10 @@ public class MenuScript : MonoBehaviour
         Application.Quit();
     }
 
+    public void OpenCollection() {
+        
+    }
+
     //Effects: Swaps this scene with the scene of the given name;
     public void sceneChange(string sceneName) {
         fadeScreen.setFade(true);

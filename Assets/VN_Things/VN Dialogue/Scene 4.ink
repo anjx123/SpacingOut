@@ -51,7 +51,7 @@ Uh, I mean, she was the one doing most of the talking. I was just-
 
 I simply meant someone who'd listen.
 
-{ChangeMood("Violet", "Nonchalant")}
+{ChangeMood("Violet", "Concentrated")}
 She always brushes me off when the topic of her parents and school comes up.
 
 {setName("Mercury")}
@@ -59,7 +59,7 @@ Oh... I see.
 
 {setName("Violet")}
 {ChangePosition("Violet", "Right")}
-
+{ChangeMood("Violet", "Nonchalant")}
 So, thanks. See you in Chem.
 
 {setName("Mercury")}
